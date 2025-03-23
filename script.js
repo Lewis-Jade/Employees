@@ -5,6 +5,7 @@ const viewProfile = document.getElementById('view-prof')
 const quit = document.getElementById('quit')
 const btnEdit = document.getElementById('edit')
 const editSection = document.getElementById('show-edit')
+const exit = document.getElementById('exit')
 
 
 btn.addEventListener('click',  function(){
@@ -28,5 +29,11 @@ btnEdit.onclick=function(){
 
 
 }
+
+exit.onclick = function(){
+  editSection.classList.remove('shoEdit')
+}
+console.log(exit)
+
 
 

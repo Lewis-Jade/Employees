@@ -34,7 +34,7 @@ $conn->close();
     }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Light blue background */
+            background-color: :rgb(139, 140, 141); /* Light blue background */
             margin: 0;
             padding: 0;
             display: flex;
@@ -43,7 +43,7 @@ $conn->close();
             height: 100vh;
         }
          p{
-            color:#00ff00;
+            color: #003366
          }
         h2 {
             color: #003366; /* Dark blue */
@@ -51,7 +51,7 @@ $conn->close();
         }
 
         form {
-            background-color: #ffffff; /* White background for the form */
+            background-color:rgb(182, 171, 171); /* White background for the form */
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -153,7 +153,7 @@ $conn->close();
             <label for="end_date">End Date:</label>
             <input type="date" name="end_date" required><br><br>
 
-            <input type="submit" value="Submit Request">
+            <input type="submit" value="Apply">
 
             <?php
             

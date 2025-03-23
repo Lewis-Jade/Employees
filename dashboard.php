@@ -110,10 +110,10 @@ require_once('dbh.inc.php');
     </div>
    
       <section  class='edit'  id="show-edit">
-
+    
       <form action="editProfile.php"  method="POST">
-       
-         <button  class="edit_btn">❌</button>
+      <h3  id="exit">❌</h3>
+   
           <h1>Edit profile</h1>
           <input type="text" name="firstname" placeholder="firstname">
           <input type="text" name="lastname" placeholder="lastname">

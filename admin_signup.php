@@ -15,6 +15,7 @@ session_start();
      <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+    <h1>Admin Sign Up</h1>
 <form action="adminpage.php" method="POST">
         <h3>Sign Up</h3>
         <input type="text" placeholder="Firstname" name="firstname" required>

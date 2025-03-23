@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2025 at 03:56 PM
+-- Generation Time: Mar 23, 2025 at 02:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -85,8 +85,33 @@ CREATE TABLE `emps` (
 --
 
 INSERT INTO `emps` (`id`, `first_name`, `last_name`, `job_role`, `salary`, `created_at`) VALUES
-(1, 'Molesha', 'Atieno', 'software engineer', 20000, '2025-02-25'),
-(3, 'Kevin', 'Atieno', 'Technician', 6788, '2025-02-25');
+(3, 'Kevo', 'Atieno', 'Technician', 6788, '2025-02-25'),
+(4, 'Mollesha', 'Atieno', 'Software Developer', 20000, '2025-03-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leave_records`
+--
+
+CREATE TABLE `leave_records` (
+  `leaveID` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `leave_type` varchar(50) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `status` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leave_records`
+--
+
+INSERT INTO `leave_records` (`leaveID`, `employee_id`, `leave_type`, `start_date`, `end_date`, `status`) VALUES
+(1, 3, 'Sick', '2025-02-23', '2025-03-20', 'Pending'),
+(2, 4, 'Vacation', '2025-03-12', '2025-03-14', 'Pending'),
+(3, 3, 'Vacation', '2025-03-19', '2025-03-22', 'Pending'),
+(4, 4, 'Personal', '2025-03-20', '2025-03-15', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -147,9 +172,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userid`, `firstname`, `lastname`, `gender`, `passwd`, `email`) VALUES
-(6, 'Mollesha', 'odera', 'Female', '$2y$10$YBTIkJO3/r7bIcgXDIHmWO8o.AdoJ8RT2EPoEdPWatH5/3WN6fDki', 'molly@gmail.com'),
 (7, 'John', 'Jiwe', 'male', '$2y$10$dnm.OeOE6mUdFau6VuS2rONKT9tloGOzppgGw7T1jthEclkSVnhey', 'john@gmail.com'),
-(8, 'Lewis', 'Ombalo', 'Male', '$2y$10$xg7kToXkRyL6AYqFOYTwsO9MvG0ThmMj1weivbHt4r/O6RNzV9e.G', 'mudaidalewis@gmail.com');
+(8, 'Lewis', 'Ombalo', 'Male', '$2y$10$xg7kToXkRyL6AYqFOYTwsO9MvG0ThmMj1weivbHt4r/O6RNzV9e.G', 'mudaidalewis@gmail.com'),
+(9, 'Mollesha', 'Atieno', 'Female', '$2y$10$ALmf8cefE5Lt7XdxVSzE9OL1ISUuHlZgfVUek1nyfBqSqwsz2H0xC', 'molly@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -173,6 +198,12 @@ ALTER TABLE `attendance`
 --
 ALTER TABLE `emps`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `leave_records`
+--
+ALTER TABLE `leave_records`
+  ADD PRIMARY KEY (`leaveID`);
 
 --
 -- Indexes for table `salaries`
@@ -213,7 +244,13 @@ ALTER TABLE `attendance`
 -- AUTO_INCREMENT for table `emps`
 --
 ALTER TABLE `emps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `leave_records`
+--
+ALTER TABLE `leave_records`
+  MODIFY `leaveID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `salaries`
@@ -231,7 +268,7 @@ ALTER TABLE `training_sessions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
